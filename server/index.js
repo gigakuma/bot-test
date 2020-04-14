@@ -17,11 +17,9 @@ client.on("message", (msg) => {
   }
 });
 
-client
-  .login("NjAyMTc2ODY4MDQwNDQxOTkz.XpWSfw.Bufa0l20xhp5a9OpqKoYF5ZwId8")
-  .catch((err) => {
-    console.log(err);
-  });
+client.login("").catch((err) => {
+  console.log(err);
+});
 
 // const PROTO_PATH = path.resolve(__dirname, './proto/sample.proto');
 
