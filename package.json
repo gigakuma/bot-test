@@ -1,0 +1,51 @@
+{
+  "name": "your-app-name",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@grpc/proto-loader": "^0.5.1",
+    "core-js": "^3.1.4",
+    "discord.js": "^12.1.1",
+    "glob": "^7.1.4",
+    "lodash": "^4.17.15",
+    "mali": "^0.17.0",
+    "regenerator": "^0.14.2",
+    "regenerator-runtime": "^0.13.3"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/node": "^7.5.5",
+    "@babel/plugin-proposal-class-properties": "^7.5.5",
+    "@babel/plugin-proposal-object-rest-spread": "^7.5.5",
+    "@babel/plugin-syntax-async-generators": "^7.2.0",
+    "@babel/plugin-transform-async-to-generator": "^7.5.0",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/register": "^7.5.5",
+    "babel-eslint": "^10.0.2",
+    "babel-loader": "^8.0.6",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-config-prettier": "^6.0.0",
+    "eslint-plugin-import": "^2.18.0",
+    "externals-dependencies": "^1.0.4",
+    "nodemon": "^1.19.1",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-node-externals": "^1.7.2"
+  },
+  "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon server/ --exec babel-node",
+    "debug": "cross-env NODE_ENV=development nodemon --inspect server/ --exec babel-node",
+    "build": "cross-env NODE_ENV=production webpack --mode production",
+    "build:babel": "cross-env NODE_ENV=production babel server -d dist",
+    "lint": "./node_modules/.bin/eslint ./server",
+    "prod": "npm run build && node dist/bundle.js",
+    "prod:babel": "npm run build:babel && node dist/"
+  },
+  "author": "",
+  "license": "ISC"
+}
